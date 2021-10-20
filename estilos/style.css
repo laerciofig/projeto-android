@@ -1,0 +1,225 @@
+@charset "UTF-8"; /*Configurando Esquema de caracteres que reconhece ç,`,*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Embedando fontes do google fontes*/
+    
+@font-face { /*Importantado fonte do diretório*/
+    font-family: 'Android';
+    src: url(../fontes/idroid.otf) format('opentype');
+}
+
+:root{ /*Criando variáveis para todo o documento html*/
+    /*Palheta de Cores*/
+    --cor01: #e5ebd6;
+    --cor02: #83e1ad;
+    --cor03: #3ddc84;
+    --cor04: #2fa866;
+    --cor05: #1a5c37;
+    --cor06: #06341e;
+
+    /* Fontes */
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Bebas Neue', cursive;
+    --font-android: 'Android', cursive;
+}
+
+*{ /*Criando Seletor Global para retirada de margins e paddinds de todos os elementos*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body{ /*Configurações globais para o Body*/
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor01);
+}
+
+a.externo::after{/* Utilizando uma classe para todos os links e uma pseudoclasse para configurar o que vem depois da classe*/
+    content: '\00A0\1F517';
+
+}
+
+header{ 
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor06)); /* Colocando gradiente de cor*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 100px; /* Configurando altura mínima*/
+    text-align: center; /*Alinhando os textos do header no centro*/
+    
+}
+/*A ausência do indicador ">" significa que não há uma hierarquia precisa, mas sim que h1 está dentro de header independente dele está dentro de outras tags*/
+header h1{
+    font-family: var(--font-destaque);/*Importanto fonte da variável criada*/
+    font-weight: normal;
+    font-size: 3em;
+    color: white;
+    padding-bottom: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452); /*Colocando esquema de sombreamento no h1 do header*/
+}
+
+header p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.5em;
+    color: white;
+    max-width: 600px;/* colocando largura maxima no parágrafo do header para que haja quebra no texto. Transformando automaticamente o texto em um bloco*/
+    margin: auto; /*Aliando o parágrafo com as margns automaticas*/
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452);
+}
+
+nav{
+    background-color: var(--cor06);
+    padding: 10px;
+    height: 20px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.384);
+    
+}
+
+nav > a{/* A utilização do indicador ">" significa que dentro da hierarquia de tags, a próxima tag dentro de nav é a*/
+    font-weight: bold;
+    color:var(--cor02);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;/* Retira toda configuração de decoração que vem padrão do texto*/
+    transition-duration: 0.5s; /*Efeito de transição para os links*/
+    
+
+}
+
+nav > a:hover{ /*Pseudo elemento responsável por modificação no momento em que o curso do mouse passa sobre o mesmo.*/
+    background-color: var(--cor03);
+    color:var(--cor06);
+}
+
+main{
+    background-color: white;
+    padding: 10px;
+    min-width: 300px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 0px 07px 02px rgba(0, 0, 0, 0.308);
+}
+
+main h1{
+    font-family: var(--font-android);
+    font-weight: normal;
+    color: var(--cor05);
+    font-size: 1.5em;
+}
+
+main h2{
+    font-family: var(--font-android);
+    font-weight: normal;
+    color: var(--cor05);
+    background-image: linear-gradient(to right, var(--cor02), white);
+    font-size: 1.2em;
+    text-indent: 10px;
+}
+
+main p{
+    margin: 10px 0px 10px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+main strong{
+    font-weight: bold;
+    color:var(--cor05);
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--cor03);
+    color: var(--cor05);
+    padding: 2px 6px;
+
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor04);
+}
+
+img{/*Tranformando o elemento em um bloco*/
+    display: block;
+    margin: auto; /*Centralizando o bloco*/
+}
+
+img.imgbugdroid{
+    min-width: 350px;/*Definindo o tamanho mínimo da imagem*/
+}
+
+div.video{
+    background-color: var(--cor05);
+    margin: 0px -10px 30px -10px; /*O -20px significa que asmargens de main está sendo considerada. Dessa forma, pode-se eliminar a quantidade, liberando as margens laterais*/
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+aside{
+    background-color: var(--cor02);
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+
+aside h3{
+    background-color: var(--cor05);
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside p{
+    padding: 10px;
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0';/* Importação de código de Emoji."00A0" é um código para espaço*/
+    list-style-position: inside;/*configuração para colocar a lista dentro do elemento*/
+    columns: 2; /*configuração que determina o número de colunas de uma lista*/
+    padding: 10px;
+}
+
+aside a{
+    background-color: white;
+}
+
+footer{
+    background-color: var(--cor06);
+    color: white;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: 0px 7px 7px  rgba(0, 0, 0, 0.363);
+}
+
+footer p{
+    font-family:var(--fonte-padrao) ;
+    font-size: 1em;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor02);
+
+}
